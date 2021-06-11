@@ -1,13 +1,12 @@
 import React from 'react';
 import Layout from '../componenets/shared/Layout';
-
+import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
     return (
         <Layout title={"Page not found"}>
-            <h2>Not found page...</h2>
-            <p>Sorry, the requested page is not available. Please check the <i>url</i>.</p>
-            lo siento
+            <h2>Sorry, the requested page is not available.</h2>
+            <p>Please check the url or return to the <Link to="/">home page</Link>.</p>
         </Layout>
     )
 }
