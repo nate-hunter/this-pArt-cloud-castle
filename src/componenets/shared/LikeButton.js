@@ -21,6 +21,7 @@ const LikeButton = () => {
 
     return (
         <div>
+            <p>{icon}</p>
             <button className={className} onClick={onClick}>{btnText}</button>
         </div>
     )

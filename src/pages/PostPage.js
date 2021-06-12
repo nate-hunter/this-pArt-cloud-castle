@@ -1,14 +1,14 @@
 import React from 'react'
 import Post from '../componenets/post/Post'
-
+import Layout from '../componenets/shared/Layout';
 
 const PostPage = () => {
     return (
-        <div>
+        <Layout>
             <h2>Post page...</h2>
 
             <Post />
-        </div>
+        </Layout>
     )
 }
 

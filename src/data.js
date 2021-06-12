@@ -4,7 +4,7 @@ export const defaultUser = {
   id: uuid(),
   username: "barry-garden",
   name: "barry",
-  profile_image: "https://res.cloudinary.com/pandaboogie/image/upload/v1620906249/zoqsjhmjpzpqoeyiqbwe.jpg"
+  avatar: "https://res.cloudinary.com/pandaboogie/image/upload/v1620906249/zoqsjhmjpzpqoeyiqbwe.jpg"
 };
 
 export function getDefaultUser() {
@@ -12,12 +12,14 @@ export function getDefaultUser() {
     id: uuid(),
     username: "barry-garden",
     name: "barry",
-    profile_image: "https://res.cloudinary.com/pandaboogie/image/upload/v1620906249/zoqsjhmjpzpqoeyiqbwe.jpg"
+    avatar: "https://res.cloudinary.com/pandaboogie/image/upload/v1620906249/zoqsjhmjpzpqoeyiqbwe.jpg"
   };
 }
 
 export const defaultPost = {
   id: uuid(),
+  title: "A public art piece",
+  area: "SOHO",
   likes: 10,
   caption: `<span class="">where that 🔥</span>`,
   user: defaultUser,
@@ -30,6 +32,8 @@ export const defaultPost = {
 export function getDefaultPost() {
   return {
     id: uuid(),
+    title: "A public art piece",
+    area: "SOHO",
     likes: 10,
     caption: `<span class="">where that 🔥🔥</span>`,
     user: defaultUser,
@@ -60,7 +64,7 @@ export const defaultCurrentUser = {
   id: uuid(),
   username: "panda",
   name: "panda boogie",
-  profile_image:
+  avatar:
     "https://res.cloudinary.com/pandaboogie/image/upload/v1612913898/lznvux7z4vwgohhwvfr6.jpg",
   website: "https://nate-hunter.com",
   email: "panda@panda.com",

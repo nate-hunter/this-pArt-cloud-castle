@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
     return (
-        <Layout title={"Page not found"}>
+        <Layout minimalNavbar title={"Page not found"}>
             <h2>Sorry, the requested page is not available.</h2>
             <p>Please check the url or return to the <Link to="/">home page</Link>.</p>
         </Layout>

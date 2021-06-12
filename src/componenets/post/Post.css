@@ -1,0 +1,27 @@
+/* .postOverlay {
+    overlay: {
+        position: 'fixed !important';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backgroundColor: 'rgba(0, 0, 0, 0.5) !important';
+        zIndex: '1200 !important';
+        padding: '0 40px !important';
+        pointerEvents: 'auto';
+    }
+} */
+
+.postOverlay {
+
+        position: 'fixed !important';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: 'rgba(0, 0, 0, 0.5) !important';
+        z-index: '1200 !important';
+        padding: '0 40px !important';
+        pointer-events: 'auto';
+
+}
