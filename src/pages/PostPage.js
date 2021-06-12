@@ -1,9 +1,13 @@
 import React from 'react'
+import Post from '../componenets/post/Post'
+
 
 const PostPage = () => {
     return (
         <div>
-            Post page...
+            <h2>Post page...</h2>
+
+            <Post />
         </div>
     )
 }
