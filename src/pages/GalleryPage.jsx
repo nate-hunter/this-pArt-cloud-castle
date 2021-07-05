@@ -1,6 +1,6 @@
 import React from 'react';
-import GalleryGrid from '../componenets/gallery/GalleryGrid';
-import Layout from '../componenets/shared/Layout';
+import GalleryGrid from '../components/gallery/GalleryGrid';
+import Layout from '../components/shared/Layout';
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import SEO from '../componenets/shared/Seo'
+import SEO from '../components/shared/Seo'
 import { Link } from 'react-router-dom'
 
 

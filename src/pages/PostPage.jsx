@@ -1,6 +1,6 @@
 import React from 'react'
-import Post from '../componenets/post/Post'
-import Layout from '../componenets/shared/Layout';
+import Post from '../components/post/Post'
+import Layout from '../components/shared/Layout';
 
 const PostPage = () => {
     return (

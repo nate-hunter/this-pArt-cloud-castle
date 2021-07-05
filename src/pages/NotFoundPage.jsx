@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../componenets/shared/Layout';
+import Layout from '../components/shared/Layout';
 import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {

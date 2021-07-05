@@ -12,7 +12,7 @@ import PostPage from './pages/PostPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import NotFoundPage from './pages/NotFoundPage';
-import PostModal from './componenets/post/PostModal';
+import PostModal from './components/post/PostModal';
 
 
 

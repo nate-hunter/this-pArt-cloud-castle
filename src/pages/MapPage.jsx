@@ -1,6 +1,6 @@
 import React from 'react';
-import Map from '../componenets/map/Map';
-import Layout from '../componenets/shared/Layout';
+import Map from '../components/map/Map';
+import Layout from '../components/shared/Layout';
 
 
 const MapPage = () => {
