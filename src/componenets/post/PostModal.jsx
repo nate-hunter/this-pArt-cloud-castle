@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { useHistory, useParams } from 'react-router';
 import Post from './Post';
-import './Post.css';
+import './post.css';
 
 // const postOverlay = {
 //     overlay: {

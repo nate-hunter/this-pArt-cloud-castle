@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
-import './App.css';
+import './app.css';
 
 import LandingPage from './pages/LandingPage';
 import GalleryPage from './pages/GalleryPage';
