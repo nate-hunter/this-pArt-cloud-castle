@@ -13,10 +13,18 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import NotFoundPage from './pages/NotFoundPage';
 import PostModal from './components/post/PostModal';
+import { AuthContext } from "./auth";
+
 
 
 
 function App() {
+  const { authState } = React.useContext(AuthContext);
+  console.log('auth:', authState)
+  // const isAuth = authState.status === 'in';
+  // const userId = isAuth ? authState.user.uid : null;
+  // const variables = { userId };
+
   const history = useHistory();
   const location = useLocation();
   const prevLocation = React.useRef(location); // can keep track of the previous location visited

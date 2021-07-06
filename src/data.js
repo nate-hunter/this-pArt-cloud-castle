@@ -1,10 +1,12 @@
 import { v4 as uuid } from "uuid";
 
+export const defaultUserImage = 'https://res.cloudinary.com/pandaboogie/image/upload/v1620906249/zoqsjhmjpzpqoeyiqbwe.jpg';
+
 export const defaultUser = {
   id: uuid(),
   username: "barry-garden",
   name: "barry",
-  avatar: "https://res.cloudinary.com/pandaboogie/image/upload/v1620906249/zoqsjhmjpzpqoeyiqbwe.jpg"
+  avatar: defaultUserImage
 };
 
 export function getDefaultUser() {
@@ -12,7 +14,7 @@ export function getDefaultUser() {
     id: uuid(),
     username: "barry-garden",
     name: "barry",
-    avatar: "https://res.cloudinary.com/pandaboogie/image/upload/v1620906249/zoqsjhmjpzpqoeyiqbwe.jpg"
+    avatar: defaultUserImage
   };
 }
 
