@@ -1,6 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom';
+import { AuthContext } from '../../auth';
 import { defaultCurrentUser } from '../../data';
+
 
 // This horizontal navbar will contain:
 // - The name of app or logo in the upper left hand corner  ->  links to the homepage 
@@ -11,18 +13,26 @@ import { defaultCurrentUser } from '../../data';
 
 const HorizontalNavbar = ({ minimalNavbar }) => {
 
-    // const history = useHistory();
+    const { signOut } = useContext(AuthContext);
+
+    const history = useHistory(); 
     // const path = history.location.pathname;
 
     const loggedIn = defaultCurrentUser;
     
     const userInfo = <Link to={`/${defaultCurrentUser.username}`} ><h4>{defaultCurrentUser.username}</h4><img style={{ maxHeight: "50px" }} src={defaultCurrentUser.avatar} alt="user-avatar" /></Link>
 
+    const handleSignout = () => {
+        // setLogoutMessage(true);  Build a log out message to display w/time out
+        signOut();
+        history.push('/accounts/login');
+    }
+
     const authStatus = loggedIn 
         ? (
             <>
                 {userInfo}
-                <Link to="/"><h2>Logout</h2></Link>
+                <Link to="/"><button onClick={handleSignout} >Logout</button></Link>
             </>
         )
         : <Link to="/accounts/login"><h2>Login</h2></Link>

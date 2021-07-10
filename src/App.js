@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import './app.css';
 
@@ -16,12 +16,10 @@ import PostModal from './components/post/PostModal';
 import { AuthContext } from "./auth";
 
 
-
-
 function App() {
   const { authState } = React.useContext(AuthContext);
   console.log('auth:', authState)
-  // const isAuth = authState.status === 'in';
+  const isAuth = authState.status === 'in';
   // const userId = isAuth ? authState.user.uid : null;
   // const variables = { userId };
 
@@ -35,6 +33,16 @@ function App() {
   }, [location, modal, history.action])
 
   const isModalOpen = modal && prevLocation.current !== location;
+
+  if (!isAuth) {
+    return (
+      <Switch>
+        <Route path='/accounts/login' component={LoginPage} />
+        <Route path='/accounts/emailsignup' component={SignupPage} />  
+        <Redirect to="/accounts/login" />
+      </Switch>
+    )
+  }
 
   return (
     <>

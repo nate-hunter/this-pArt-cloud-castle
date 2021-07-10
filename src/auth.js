@@ -56,7 +56,23 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const signInWithGoogle = async () => {
-    await firebase.auth().signInWithPopup(provider);
+    const userData = await firebase.auth().signInWithPopup(provider);
+
+    if (userData.additionalUserInfo.isNewUser) {
+      console.log('is new user???', { userData })
+      const { uid, displayName, email, photoURL } = userData.user
+      const username = `${displayName.replace(/\s+/g, "")}${uid.slice(-5)}}`
+      const variables = {
+        userId: uid,
+        name: displayName,
+        username,
+        email,
+        bio: '',
+        website: '',
+        avatar: photoURL
+      };
+      await createUser({ variables });
+    }
   };
 
   const signUpWithEmailAndPassword = async formData => {
@@ -82,6 +98,24 @@ const AuthProvider = ({ children }) => {
     setAuthState({ status: 'out' });
   };
 
+  const logInWithEmailAndPassword = async (username, password) => {
+    const loggedInUser = await firebase.auth().signInWithEmailAndPassword(username, password)
+      // .catch(function(error) {
+      //   // Handle Errors here.
+      //   const errorCode = error.code;
+      //   const errorMessage = error.message;
+      //   if (errorCode === 'auth/wrong-password') {
+      //     alert('Wrong password.');
+      //   } else {
+      //     alert(errorMessage);
+      //   }
+      //   console.log(error);
+      // });
+    return loggedInUser;
+  }
+
+
+
   if (authState.status === 'loading') {
     return null;
   } else {
@@ -91,7 +125,7 @@ const AuthProvider = ({ children }) => {
           authState,
           signInWithGoogle,
           signUpWithEmailAndPassword, 
-          // logInWithEmailAndPassword,
+          logInWithEmailAndPassword,
           signOut,
           // updateEmail
         }}
