@@ -10,7 +10,6 @@ import SEO from './Seo';
 
 
 const Layout = ({ title, children, minimalNavbar=false }) => {
-
     return (
         <section>
             <SEO title={title} />

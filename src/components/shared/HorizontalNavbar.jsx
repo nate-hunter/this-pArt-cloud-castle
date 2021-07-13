@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom';
+import { UserContext } from '../../App';
 import { AuthContext } from '../../auth';
+
 import { defaultCurrentUser } from '../../data';
 
 
@@ -14,13 +16,15 @@ import { defaultCurrentUser } from '../../data';
 const HorizontalNavbar = ({ minimalNavbar }) => {
 
     const { signOut } = useContext(AuthContext);
-
+    const { me } = useContext(UserContext);
     const history = useHistory(); 
     // const path = history.location.pathname;
-
-    const loggedIn = defaultCurrentUser;
     
-    const userInfo = <Link to={`/${defaultCurrentUser.username}`} ><h4>{defaultCurrentUser.username}</h4><img style={{ maxHeight: "50px" }} src={defaultCurrentUser.avatar} alt="user-avatar" /></Link>
+    const loggedIn = !!me || defaultCurrentUser;
+    console.log('contexualized, logged in?', loggedIn);
+    console.log('username? ', me.username)
+    
+    const userInfo = <Link to={`/${me.username}`} ><h4>{me.username}</h4><img style={{ maxHeight: "50px" }} src={me.avatar} alt="user-avatar" /></Link>
 
     const handleSignout = () => {
         // setLogoutMessage(true);  Build a log out message to display w/time out

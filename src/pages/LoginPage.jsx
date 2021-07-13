@@ -34,6 +34,7 @@ const LoginPage = () => {
       variables
     })
     const userEmail = response.data.users[0]?.email || 'error@email.com';
+    console.log('user email:', userEmail)
     return userEmail;
   }
 

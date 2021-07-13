@@ -21,7 +21,6 @@ firebase.initializeApp({
 
 export const AuthContext = createContext();
 
-
 const AuthProvider = ({ children }) => {
   const [authState, setAuthState] = useState({ status: 'loading' });
   const [createUser] = useMutation(CREATE_USER);
@@ -100,21 +99,8 @@ const AuthProvider = ({ children }) => {
 
   const logInWithEmailAndPassword = async (username, password) => {
     const loggedInUser = await firebase.auth().signInWithEmailAndPassword(username, password)
-      // .catch(function(error) {
-      //   // Handle Errors here.
-      //   const errorCode = error.code;
-      //   const errorMessage = error.message;
-      //   if (errorCode === 'auth/wrong-password') {
-      //     alert('Wrong password.');
-      //   } else {
-      //     alert(errorMessage);
-      //   }
-      //   console.log(error);
-      // });
     return loggedInUser;
   }
-
-
 
   if (authState.status === 'loading') {
     return null;
