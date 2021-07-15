@@ -137,11 +137,11 @@ const SignupPage = () => {
       <h2>this pArt</h2>
       <p>Sign up to see public art pieces from around the world.</p>
       <Button
-          type='submit'
-          style={{ backgroundColor: 'slateblue', color: 'white'}}
-        >
-          Signup with Google
-        </Button>
+        type='submit'
+        style={{ backgroundColor: 'slateblue', color: 'white' }}
+      >
+        Signup with Google
+      </Button>
       <p>- or -</p>
 
       {/*  React Hook Form:   
@@ -203,33 +203,58 @@ const SignupPage = () => {
       <AuthError error={error} />
       */}
 
-
       <div>
         <form onSubmit={handleSubmit}>
-          <input name='email' onChange={handleChange} type='text' placeholder='Email...' />
-          <input name='name' onChange={handleChange} type='text' placeholder='Fullname...' />
-          <input name='username' onChange={handleChange} type='text' placeholder='Username...' />
-          <input name='password' onChange={handleChange} type='password' placeholder='Password...' />
+          <input
+            name='email'
+            onChange={handleChange}
+            type='text'
+            placeholder='Email...'
+          />
+          <input
+            name='name'
+            onChange={handleChange}
+            type='text'
+            placeholder='Fullname...'
+          />
+          <input
+            name='username'
+            onChange={handleChange}
+            type='text'
+            placeholder='Username...'
+          />
+          <input
+            name='password'
+            onChange={handleChange}
+            type='password'
+            placeholder='Password...'
+          />
 
-          <button type='submit' style={{ backgroundColor: 'lightseagreen', color: 'white', border: 'none', margin: '10px', padding: '10px', cursor: 'pointer', borderRadius: '5px' }}>Signup</button>
+          <button
+            type='submit'
+            style={{
+              backgroundColor: 'lightseagreen',
+              color: 'white',
+              border: 'none',
+              margin: '10px',
+              padding: '10px',
+              cursor: 'pointer',
+              borderRadius: '5px',
+            }}
+          >
+            Signup
+          </button>
         </form>
         <AuthError error={error} />
       </div>
 
       <div>
-        <br/>
+        <br />
         <p>Already signed up?</p>
         <Link to='/accounts/login'>
-          <Button
-            style={{ backgroundColor: 'lightseagreen'}}
-          >
-            Login
-          </Button>
+          <Button style={{ backgroundColor: 'lightseagreen' }}>Login</Button>
         </Link>
       </div>
-
-
-
     </>
   );
 };
