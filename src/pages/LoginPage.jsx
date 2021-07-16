@@ -97,7 +97,7 @@ const LoginPage = () => {
           <br/>
           <br/>
           {/* <Button type="submit" variant="contained">Login Btn Component</Button> */}
-          <button type='submit' style={{ backgroundColor: 'lightseagreen', color: 'white', padding: '5px', border: '0.5px solid slategrey', borderRadius: '5px' }}>Login Btn Tag</button>
+          <button type='submit' style={{ backgroundColor: 'lightseagreen', color: 'white', padding: '5px', border: '0.5px solid slategrey', borderRadius: '5px', cursor: 'pointer' }}>Login Btn Tag</button>
           {/* <input type="submit" value="Login Input Tag" /> */}
         </form>
         <AuthError error={error} />
@@ -138,7 +138,7 @@ export const GoogleLogin = () => {
   return (
     <>
       {/* <Button onClick={handleLogInWithGoogle} fullWidth color={color} variant={variant} > */}
-      <Button onClick={handleLogInWithGoogle} color='primary'  >
+      <Button onClick={handleLogInWithGoogle} style={{ backgroundColor: 'royalblue', color: 'white'}}  >
         Log In with Google
       </Button>
       <AuthError error={error} />

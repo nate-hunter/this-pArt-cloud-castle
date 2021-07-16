@@ -22,9 +22,14 @@ const HorizontalNavbar = ({ minimalNavbar }) => {
     
     const loggedIn = !!me || defaultCurrentUser;
     console.log('contexualized, logged in?', loggedIn);
-    console.log('username? ', me.username)
+    // console.log('username? ', me.username)
     
-    const userInfo = <Link to={`/${me.username}`} ><h4>{me.username}</h4><img style={{ maxHeight: "50px" }} src={me.avatar} alt="user-avatar" /></Link>
+    const userInfo = me && (
+      <Link to={`/${me.username}`}>
+        <h4>{me.username}</h4>
+        <img style={{ maxHeight: "50px" }} src={me.avatar} alt="user-avatar" />
+      </Link>
+    );
 
     const handleSignout = () => {
         // setLogoutMessage(true);  Build a log out message to display w/time out

@@ -54,8 +54,8 @@ function App() {
 
   const isModalOpen = modal && prevLocation.current !== location;
   const me = isAuth && data ? data.users[0] : null;
-  console.log('is me?', me);
-  const currentUserId = me.id;
+  // console.log('is me?', me);
+  const currentUserId = me && me.id;
 
   return (
     <UserContext.Provider value={{ me, currentUserId }} >

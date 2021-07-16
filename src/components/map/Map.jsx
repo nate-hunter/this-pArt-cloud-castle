@@ -75,7 +75,7 @@ const Map = ({ classes }) => {
         width='100vw'
         height='100vh'
         mapStyle='mapbox://styles/mapbox/light-v10'
-        mapboxApiAccessToken=''
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         onViewportChange={newViewport => setViewport(newViewport)}
         onClick={handleMapClick}
         // scrollZoom={!mobileSize}

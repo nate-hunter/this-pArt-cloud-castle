@@ -10,6 +10,8 @@ export const ME = gql`
       name
       avatar
       last_checked
+      bio
+      website
     }
   }
 `;
